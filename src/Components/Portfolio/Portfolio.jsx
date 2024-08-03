@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import poert1 from '../../assets/poert1.png'
 import poert2 from '../../assets/port2.png'
 import poert3 from '../../assets/port3.png'
@@ -7,6 +7,12 @@ export default function Portfolio() {
 
   document.title='Portfolio';
 
+  const [fullLayer, setFullLayer] = useState(false)
+
+  function showImg(){
+    setFullLayer(true);
+    console.log('eve');
+  }
 
   return (
     <>
@@ -31,15 +37,15 @@ export default function Portfolio() {
           <img src={poert1} className='w-full rounded-2xl' alt="poert"  />
 
 
-        </div>
-
-
-        <div className="layer absolute bg-[#1ABC9C]   group-hover:opacity-70 transition-all duration-500 top-0 left-0 right-0 bottom-0 opacity-0 rounded-2xl">
+          <div className="layer absolute bg-[#1ABC9C]   group-hover:opacity-70 transition-all duration-500 top-0 left-0 right-0 bottom-0 opacity-0 rounded-2xl">
         <div className="layer-icon flex justify-center items-center w-full h-full">
         <i className="text-white text-5xl fa-solid fa-plus fa-5x"></i>
         </div>
           
         </div>  
+        </div>
+
+
     </div>
 
     <div className="innerspace relative overflow-hidden group cursor-pointer">
@@ -47,16 +53,17 @@ export default function Portfolio() {
       <div className="imgPortfolio ">
           <img src={poert2} className='w-full rounded-2xl' alt="poert"  />
 
-
-        </div>
-
-
-        <div className="layer absolute bg-[#1ABC9C]   group-hover:opacity-70 transition-all duration-500 top-0 left-0 right-0 bottom-0 opacity-0 rounded-2xl">
+          <div className="layer absolute bg-[#1ABC9C]   group-hover:opacity-70 transition-all duration-500 top-0 left-0 right-0 bottom-0 opacity-0 rounded-2xl">
         <div className="layer-icon flex justify-center items-center w-full h-full">
         <i className="text-white text-5xl fa-solid fa-plus fa-5x"></i>
         </div>
           
         </div>  
+
+        </div>
+
+
+       
     </div>
 
     <div className="innerspace relative overflow-hidden group cursor-pointer">
@@ -65,66 +72,68 @@ export default function Portfolio() {
           <img src={poert3} className='w-full rounded-2xl' alt="poert"  />
 
 
-        </div>
-
-
-        <div className="layer absolute bg-[#1ABC9C]   group-hover:opacity-70 transition-all duration-500 top-0 left-0 right-0 bottom-0 opacity-0 rounded-2xl">
+          <div className="layer absolute bg-[#1ABC9C]   group-hover:opacity-70 transition-all duration-500 top-0 left-0 right-0 bottom-0 opacity-0 rounded-2xl">
         <div className="layer-icon flex justify-center items-center w-full h-full">
         <i className="text-white text-5xl fa-solid fa-plus fa-5x"></i>
         </div>
           
         </div>  
+
+        </div>
+
+
+        
     </div>
 
     <div className="innerspace relative overflow-hidden group cursor-pointer">
 
       <div className="imgPortfolio ">
           <img src={poert1} className='w-full rounded-2xl' alt="poert"  />
-
-
-        </div>
-
-
-        <div className="layer absolute bg-[#1ABC9C]   group-hover:opacity-70 transition-all duration-500 top-0 left-0 right-0 bottom-0 opacity-0 rounded-2xl">
+          <div className="layer absolute bg-[#1ABC9C]   group-hover:opacity-70 transition-all duration-500 top-0 left-0 right-0 bottom-0 opacity-0 rounded-2xl">
         <div className="layer-icon flex justify-center items-center w-full h-full">
         <i className="text-white text-5xl fa-solid fa-plus fa-5x"></i>
         </div>
           
         </div>  
+
+        </div>
+
+
+        
     </div>
 
-    <div className="innerspace relative overflow-hidden group cursor-pointer">
+    <div className="innerspace  overflow-hidden group cursor-pointer">
 
-      <div className="imgPortfolio ">
+      <div className="imgPortfolio  relative">
           <img src={poert2} className='w-full rounded-2xl' alt="poert"  />
 
-
-        </div>
-
-
-        <div className="layer absolute bg-[#1ABC9C]   group-hover:opacity-70 transition-all duration-500 top-0 left-0 right-0 bottom-0 opacity-0 rounded-2xl">
+          <div className="layer absolute bg-[#1ABC9C]   group-hover:opacity-70 transition-all duration-500 top-0 left-0 right-0 bottom-0 opacity-0 rounded-2xl">
         <div className="layer-icon flex justify-center items-center w-full h-full">
         <i className="text-white text-5xl fa-solid fa-plus fa-5x"></i>
         </div>
           
         </div>  
+        </div>
+
+
+       
     </div>
 
-    <div onClick={(e)=>{console.log(e)}} className="innerspace relative overflow-hidden group cursor-pointer">
+    <div onClick={(e)=>{showImg();console.log(e); }} className=" innerspace relative overflow-hidden group cursor-pointer ">
 
-      <div className="imgPortfolio ">
-          <img src={poert3} className='w-full rounded-2xl' alt="poert"  />
+      <div  className="imgPortfolio  ">
+          <img   src={poert3} className='w-full rounded-2xl' alt="poert"  />
 
-
+       
         </div>
-
-
-        <div className="layer absolute bg-[#1ABC9C]   group-hover:opacity-70 transition-all duration-500 top-0 left-0 right-0 bottom-0 opacity-0 rounded-2xl">
+        <div className="layer absolute bg-[#1ABC9C]   group-hover:opacity-70 transition-all duration-500 top-0 right-0  w-full h-full opacity-0  rounded-2xl">
         <div className="layer-icon flex justify-center items-center w-full h-full">
         <i className="text-white text-5xl fa-solid fa-plus fa-5x"></i>
         </div>
           
         </div>  
+
+      
     </div>
     
 
@@ -136,11 +145,11 @@ export default function Portfolio() {
 </div>
 
 
-<div className="hidden  photo-click   justify-center items-center fixed  top-0 left-0 right-0 bottom-0 bg-[#c2dbfed1]">
+      {fullLayer?<div className="flex  photo-click   justify-center items-center fixed  top-0 left-0 right-0 bottom-0 bg-[#c2dbfed1]">
       <div className="click-img w-[40%] ">
       <img src={poert1} alt="poert1" className='w-full' />
       </div>
-    </div>
+    </div>:''}
 
         </section>
     
